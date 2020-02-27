@@ -12,9 +12,6 @@ const addToDom = photos => {
     el.innerHTML =
       `<a href="${photo.links.download}" target="_blank"/>
         <img src="${photo.urls.regular}=">
-        <div class="overlay">
-          <div class="download">+</div>
-        </div>
       </a>`;
     imageGrid.appendChild(el);
   });
@@ -30,7 +27,6 @@ const loadMore = () => {
       // console.log(data);
       photos.push(...data);
       addToDom(photos);
-      loader.style.display = "none";
     })
     .catch(err => {
       console.log(err);
