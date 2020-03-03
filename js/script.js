@@ -1,5 +1,5 @@
 const api = "https://api.unsplash.com";
-const key = "9BsL2VVaWgrKl5BhzMdiL1Sb2qygEYUAqSOeQyd4p6Y";
+const key = "XNMHBANvtC9AdY6629KyMvqu0sYwzD83JqY1Azfw8TA";
 const count = 30;
 
 let imageGrid = document.querySelector('.image-grid');
@@ -11,7 +11,7 @@ const addToDom = photos => {
     el.style.backgroundColor = photo.color;
     el.innerHTML =
       `<a href="${photo.links.download}" target="_blank"/>
-        <img src="${photo.urls.regular}=">
+        <img src="${photo.urls.regular}=" loading="lazy">
       </a>`;
     imageGrid.appendChild(el);
   });
@@ -34,7 +34,7 @@ const loadMore = () => {
 };
 
 window.addEventListener('scroll', function () {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
     loadMore();
   }
 });
